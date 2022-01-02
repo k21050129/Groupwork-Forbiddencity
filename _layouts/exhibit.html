@@ -1,0 +1,35 @@
+---
+---
+
+<head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="{{ site.baseurl }}/style.css">
+</head>
+<body>
+    <div id = "">
+        <div id = "">
+            <nav>
+                <a href="{{ site.baseurl }}/">Gallery Index</a>
+                <a href="{{ site.baseurl }}/divisions">Divisions</a>
+                <a href="{{ site.baseurl }}/search">Search</a>
+                <a href="{{ site.baseurl }}/about">About</a>
+            </nav>
+        </div>
+        <div id = "content">
+            {% assign licence = site.data.licences | find: "licence", page.licence %}
+            {% assign division = site.data.divisions | find : "division", page.division %}
+            <img src = "{{ page.image-url }}" id = "", width = 500>
+            <p>{{ page.title }} in <a href = "{{ division.weburl }}">{{ page.division }}</a></p>
+            <p>Built Time: {{ page.time }}</p>
+            <p>Architectural Parameters: {{ page.para }}</p>
+            <p>Introduction:<br> {{ page.intro }}</p>
+            <p>{{ page.intro2 }}</p>
+            <p>Tag: {{ page.tags }}</p>
+            <p><a href = "{{ licence.url }}">{{ page.licence }}</a></p>
+        </div>
+        <div id = "">
+            <p>Creat by Chenkai, Zhuoqun, Mengxin, Ruowei</p>
+        </div>
+    </div>
+</body>
